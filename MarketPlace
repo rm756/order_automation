@@ -1,0 +1,275 @@
+import pyautogui
+import time
+time.sleep(3)
+
+
+dic = {}
+dic["MP-HAMILTON"]=[]
+dic["MP-SHELLY BAY"]=[]
+dic["MP-HERON BAY"]=[]
+dic["MP-SOMERSET"]=[]
+dic["MP-MODERN MART"]=[]
+dic["MP-SHOPPING CENTRE"]=[]
+dic["MP-PAGET"]=[]
+dic["MP-SMITHS"]=[]
+
+c1=0
+c2=0
+c3=0
+c4=0
+c5=0
+c6=0
+c7=0
+c8=0
+c9=0
+order= open("1028202.txt","r+")
+#contents =order.readlines()
+
+for line in order:
+    if "HAMILTON" in line:
+        next_line=next(order)
+        while next_line!=" \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-HAMILTON"].append(clean)
+            
+    elif "SHELLY BAY" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-SHELLY BAY"].append(clean)
+
+    elif "HERON BAY" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-HERON BAY"].append(clean)
+
+    elif "SOMERSET" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-SOMERSET"].append(clean)
+
+    elif "MODERN MART" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-MODERN MART"].append(clean)
+
+    elif "SHOPPING CENTRE" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-SHOPPING CENTRE"].append(clean)
+
+    elif "PAGET" in line:
+        next_line=next(order)
+        while next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-PAGET"].append(clean)
+
+    elif "SMITHS" in line:
+        next_line=next(order)
+        if next_line != " \n":
+            next_line=next(order)
+            clean = next_line.lower()
+            dic["MP-SMITHS"].append(clean)
+        
+
+
+print(dic)
+        
+
+for key in dic:
+    #item=dic[key]
+    for item in dic[key]:
+        #----------------VSA3---------------------------------------
+        if "fresh whole atlantic canada salmon 8/10" in item:
+            pyautogui.write("VSA3")
+            if c1==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c1+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+        #-----------------VNSR----------------------------------------        
+        elif "snapper" in item:
+            pyautogui.write("VSNR")
+            if c2==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c2+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+        #---------------VSAF--------------------------------------
+        elif "fresh salmon fillet, chilean" in item:
+            pyautogui.write("VSAFCH")
+            if c3==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c3+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        #---------------VTIF--------------------------------------
+        elif "tilapia" in item:
+            pyautogui.write("VTIFI7")
+            if c4==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c4+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        #---------------VSACOFI--------------------------------------
+        elif "coho wild" in item:
+            pyautogui.write("VSACOFI")
+            if c5==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c5+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        #---------------VCOAL--------------------------------------
+        elif "refresh cod fillet" in item:
+            pyautogui.write("VCOAL")
+            if c6==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c6+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        #---------------VHAFI--------------------------------------
+        elif "fresh halibut fi" in item:
+            pyautogui.write("VHAFI")
+            if c7==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c7+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        #---------------VSBFI--------------------------------------
+        elif "chilean sea bass" in item:
+            pyautogui.write("VSBFI")
+            if c8==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=9, interval=0.1)
+                c8+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=9, interval=0.1)
+
+        #---------------VMAFI--------------------------------------
+        elif "fresh mahi fillet" in item:
+            pyautogui.write("VMAFI")
+            if c9==0:
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+                c9+=1
+            else:
+                pyautogui.press('enter')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.press('enter')
+                pyautogui.press('tab')
+                pyautogui.write(key)
+                pyautogui.press('enter', presses=8, interval=0.1)
+
+        else:
+            continue
+    else:
+        continue
+order.close()
