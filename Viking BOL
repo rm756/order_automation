@@ -1,0 +1,45 @@
+import pyautogui
+import time
+time.sleep(5)
+order= open("1028202.txt","r+")
+count=0
+count_reg=0
+#contents =order.readlines()
+
+for line in order:
+    if line.startswith("MARKET"):
+        if count==0:
+            pyautogui.write("CASE 1")
+            pyautogui.press('enter')
+            cleanline='MP - ' + line.strip('MARKET PLACE')
+            #cleanline=cleanline.upper()
+            pyautogui.write(cleanline)
+            pyautogui.press('enter', presses=3, interval=0.1)
+            count+=1
+        else:
+            pyautogui.write("CASE 1")
+            pyautogui.press('enter', presses=2, interval=0.1)
+            cleanline='MP - ' + line.strip('MARKET PLACE')
+            #cleanline=cleanline.upper()
+            pyautogui.write(cleanline)
+            pyautogui.press('enter', presses=3, interval=0.1)
+    if line=="\n":
+        if count_reg==0:
+            pyautogui.write("CASE 2")
+            pyautogui.press('enter')
+            next_line=next(order)
+            next_line=next_line.upper()
+            pyautogui.write(next_line)
+            pyautogui.press('enter', presses=3, interval=0.1)
+            count_reg+=1
+        else:
+            pyautogui.write("CASE 2")
+            pyautogui.press('enter', presses=2, interval=0.1)
+            next_line=next(order)
+            next_line=next_line.upper()
+            pyautogui.write(next_line)
+            pyautogui.press('enter', presses=3, interval=0.1)
+
+order.close()    
+
+
